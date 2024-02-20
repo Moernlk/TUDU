@@ -1,0 +1,149 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+div {
+  margin: 0px;
+}
+body {
+
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  min-height: 100vh;
+  min-width: 50px;
+
+
+
+  background-color: whitesmoke;
+  margin-bottom: 457.9px;
+  min-width: 350px;
+  min-height: 100vh;
+}
+
+
+.container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 50px;
+  top: 5px;
+  overflow: hidden;
+
+}
+.tudu
+{
+  border-color: 1px solid red;
+  overflow: hidden;
+}
+
+
+
+.headline {
+  display:flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  right: 8px;
+  left: 8px;
+
+  top: 5px;
+
+  padding-right: 10px;
+  background-color: white;
+
+  border: solid brown;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  color: lightcoral;
+  z-index: 3;
+}
+.left-section {
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding-top: 6px;
+  padding-bottom: 8px;
+  margin: 0px 0px;
+
+}
+.titulo {
+  display: inline-block;
+  flex-direction: row-reverse;
+  align-items: left;
+  justify-content: left;
+  margin: 0;
+  padding-bottom: 0px;
+}
+.search-section {
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+.addbutton {
+  border: solid;
+  border-color: lightcoral;
+  background-color: lightcoral;
+  color: white;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+}
+.addbutton:hover {
+  cursor: pointer;
+}
+.addbutton:active {
+  border-color: rgb(236, 151, 151);
+  background-color: white;
+  color: black;
+}
+.list-space {
+  border: solid brown;
+  border-radius: 5px;
+  min-width: calc(100% - 20px);
+  height: 50%;
+  margin-top: 1px;
+  padding-top: 45px;
+  padding-bottom: 5px;
+  right: 8px;
+  margin-left: 0px;
+  background-color: rgb(255, 240, 245);
+
+  z-index: 0;
+}
+.list {
+  border: black;
+  padding: 10px;
+}
+.dellbutt {
+  display: inline-block;
+  flex-direction: row;
+  border: solid pink;
+  border-radius: 5px;
+  background-color: pink;
+  right: 0;
+  margin-left: 15px;
+}
+.dellbutt:hover {
+  cursor: pointer;
+  background-color: rgb(255, 146, 164);
+  border-color: rgb(255, 146, 164);
+}
+.dellbutt:active {
+  background-color: white;
+  border-color: rgb(255, 146, 164);
+}
