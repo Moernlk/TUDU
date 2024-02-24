@@ -8,13 +8,15 @@
     <title>Tu Du</title>
 
     <style>
-      * * {
+      * * 
+      {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         border: 1px solid blue;
       }
-      body {
+      body 
+      {
         display: flex;
         justify-content: center;
         align-items: start;
@@ -22,7 +24,8 @@
         min-width: 50px;
         background: linear-gradient(lightblue, rgb(32, 32, 255));
       }
-      .container {
+      .container 
+      {
         position: relative;
         justify-content: center;
         align-items: center;
@@ -31,7 +34,8 @@
         min-width: 50%;
       }
 
-      .flex {
+      .flex 
+      {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -39,7 +43,8 @@
         border: 1px solid yellow;
         overflow: hidden;
       }
-      .tudu {
+      .tudu 
+      {
         position: relative;
         display: flex;
         justify-content: center;
@@ -47,7 +52,8 @@
         width: 100%;
         border: transparent;
       }
-      .tudu-headline-section {
+      .tudu-headline-section 
+      {
         position: static;
         display: flex;
         justify-content: space-around;
@@ -56,7 +62,8 @@
         max-width: 100%;
       }
 
-      .tudu-icon {
+      .tudu-icon 
+      {
         position: relative;
         justify-content: center;
         align-items: center;
@@ -77,12 +84,17 @@
         padding-right: 5px;
 
       }
-      .tudu-search-section {
+      .tudu-search-section 
+      {
         border: #607d8b;
       }
 
+
+
+
       
-      .tudu-info-section {
+      .tudu-info-section 
+      {
         position: static;
         display: flex;
         justify-content: space-between;
@@ -92,11 +104,16 @@
         min-width: 42%;
       }
 
-      .tudu-date-bar {
+
+      .tudu-time-bar
+
+      {
         border: transparent;
         margin: 1px;
       }
-      .tudu-date-input {
+
+      .tudu-time-input
+      {
         background-color: #607d8b00;
         color: #35464e;
         font-size: 80%;
@@ -108,7 +125,26 @@
         padding: 3px 3px 3px 5px;
       }
 
-      .tudu-submit-button-section {
+      .tudu-date-bar 
+      {
+        border: transparent;
+        margin: 1px;
+      }
+      .tudu-date-input 
+      {
+        background-color: #607d8b00;
+        color: #35464e;
+        font-size: 80%;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+        border: solid #607d8b 1px;
+        border-radius: 5px;
+        
+        padding: 3px 3px 3px 5px;
+      }
+
+      .tudu-submit-button-section 
+      {
         border-color: #607d8b00;
         position: relative;
         justify-content: center;
@@ -116,7 +152,8 @@
         border: rgb(96, 125, 139);
         background-color: transparent;
       }
-      .add-button {
+      .add-button 
+      {
         position: relative;
         justify-content: baseline;
         color-interpolation-filters: sRGB(96, 125, 139);
@@ -130,13 +167,15 @@
         background-color: rgba(255, 0, 0, 0);
       }
 
-      .img-add {
+      .img-add 
+      {
         border: transparent;
         width: 80%;
         height: 79%;
       }
 
-      .tudu-list {
+      .tudu-list 
+      {
         height: 0px;
         width: 100%;
       }
@@ -151,12 +190,12 @@
             <div class="tudu-icon">TUDU</div>
             <div class="tudu-search-section">
               <div class="tudu-text-bar">
-                <input class="sting-input" id="subjectTuDu" type="text" />
+                <input class="tudu-string-input" id="subjectTuDu" type="text" />
               </div>
             </div>
             <div class="tudu-info-section">
               <div class="tudu-time-bar">
-                <input class="time-iInput" id="timeTuDu" type="time" />
+                <input class="tudu-time-input" id="timeTuDu" type="time" />
               </div>
               <div class="tudu-date-bar">
                 <input class="tudu-date-input" id="dateTuDu" type="date" />
