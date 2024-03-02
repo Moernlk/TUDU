@@ -1,0 +1,105 @@
+.container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border: 1px dotted #607d8b;
+  border-radius: 10px;
+
+  top: 15px;
+  max-width: 550px;
+  padding-bottom: 5px;
+  padding-top: 3px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  border: 1px yellow;
+  overflow: hidden;
+}
+.tudu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  border: none;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-height: 40vh;
+  overflow: auto;
+}
+.line {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dotted #607d8b;
+
+}
+.tudu-list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  height:15px;
+  width: 100%;
+  ;
+}
+
+#listTuDu::-webkit-scrollbar{
+  padding: 3px 3px 3px 3px;
+  background: none;
+}
+#listTuDu::-webkit-scrollbar-thumb{
+  background: linear-gradient( #607d8b, #bee2ee);
+  border-radius: 5px;
+  scroll-padding-inline: 5px;
+}
+
+
+
+.dellbutt:active{
+  background: rgba(177, 2, 2, 0.589);
+  border: none;
+
+
+}
+
+.zButton{
+  position: relative;
+}
+
+.note-section{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px  #607d8b;
+  padding-bottom: 2px;
+}
+.tudu-note{
+  padding: 0px;
+  padding-left: 7px;
+  padding-right: 75px
+
+}
+.note-info{
+  padding-left: 50px;
+  padding-right: 50px;
+
+}
+
+
+
+

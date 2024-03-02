@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 
 <html lang="pt">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tudu</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tudu</title>
+  <head>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="scriptsheet" href="" />
 
-<head>
+    <title>Tu Du</title>
 
+    <style></style>
+  </head>
 
-  <link rel="stylesheet" href="style/style.css">
-  <link rel="scriptsheet" href="">
-
-  <title>Tu Du</title>
-
-  <style>
-    
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="tudu">
-
-      <div class="headline">
-        <div class="left-section">
-          <div class="titulo">TuDu</div>
-        </div>
-          <div class="search-section">
-            <input class="stingInput" id="subjectTuDu" type="text" />
+  <body>
+    <div class="container">
+      <div class="tudu">
+        <div class="headline">
+          <div class="left-section">
+            <div class="titulo">TuDu</div>
           </div>
-    
+          <div class="search-section">
+            <input class="stringInput" id="subjectTuDu" type="text" />
+          </div>
+
           <div>
             <input class="dateInput" id="dateTuDu" type="date" />
             <input class="timeInput" id="timeTuDu" type="time" />
@@ -41,129 +35,120 @@
             </button>
           </div>
         </div>
-      <div class="block"></div>
-    
-      <div class="list-space">
-        <div id="listTuDu" class="list">
-          <div></div>
-          <div></div>
-          <div></div>
+        <div class="block"></div>
+
+        <div class="list-space">
+          <div id="listTuDu" class="list"></div>
         </div>
       </div>
-
     </div>
-    
 
-  </div>
-  
+    <script type="text/javascript">
+      // Model
 
-  <script type="text/javascript">
-    // Model
+      let tudu;
 
-    let tudu;
+      //retrieve data.
+      const savedTuDus = JSON.parse(localStorage.getItem("tudu"));
 
-    //retrieve data.
-    const savedTuDus = JSON.parse(localStorage.getItem("tudu"));
+      if (Array.isArray(savedTuDus)) {
+        tudu = savedTuDus;
+        render();
+      } else {
+        tudu = [
+          {
+            title: "bom dia, Kelvin",
+            duedate: "25/12/2020",
+            time: "",
+            id: "beggining",
+          },
+        ];
+        render();
+      }
+      //--Create TuDu
+      function createTuDu(subject, duedate, acttime) {
+        const id = "" + new Date().getTime();
 
-    if (Array.isArray(savedTuDus)) {
-      tudu = savedTuDus;
-      render();
-    } else {
-      tudu = [
-        {
-          title: "bom dia, Kelvin",
-          duedate: "25/12/2020",
-          time: "",
-          id: "beggining",
-        },
-      ];
-      render();
-    }
-    //--Create TuDu
-    function createTuDu(subject, duedate, acttime) {
-      const id = "" + new Date().getTime();
+        tudu.push({
+          title: subject,
+          duedate: duedate,
+          time: acttime,
+          id: id,
+        });
+        saveTuDu();
+      }
+      //--Delete TuDu
+      function removeTuDu(idtoDelete) {
+        tudu = tudu.filter(function (x) {
+          //console.log(x.id)
+          if (x.id === idtoDelete) {
+            return false;
+          } else {
+            return true;
+          }
+        });
+        saveTuDu();
+      }
 
-      tudu.push({
-        title: subject,
-        duedate: duedate,
-        time: acttime,
-        id: id,
-      });
-      saveTuDu();
-    }
-    //--Delete TuDu
-    function removeTuDu(idtoDelete) {
-      tudu = tudu.filter(function (x) {
-        //console.log(x.id)
-        if (x.id === idtoDelete) {
-          return false;
-        } else {
-          return true;
-        }
-      });
-      saveTuDu();
-    }
-    function saveTuDu() {
-      localStorage.setItem("tudu", JSON.stringify(tudu));
-    }
+      function saveTuDu() {
+        localStorage.setItem("tudu", JSON.stringify(tudu));
+      }
 
-    /* 
+      /* 
     Função de sequencia da lista: 
     Se a data do Tudu for menor que que a data do proximo TuDu na lista
     então inseri-lo na tela, então se não existir outro Tudu menor que o
     comparado, então inserilo, caso contrario inserir o menor.
     */
-    //View--
-    function render() {
-      document.getElementById("listTuDu").innerHTML = "";
+      //View--
+      function render() {
 
-      tudu.forEach(function (x) {
-        const subject = document.createElement("div");
-        subject.innerText = x.title + " || " + x.time + " || " + x.duedate;
 
-        const dellButton = document.createElement("button");
-        dellButton.innerHTML =
-          '<img style="position: center; width: 15px; height: 15px;" src="img/dellButton.png" alt="" />';
-        dellButton.className = "dellbutt";
-        /*for (var b = 0; b < button.length; b++) {
-          dellButton[b].src + "img/dellButton.png";
-        }*/
-        dellButton.onclick = dellTuDu;
-        dellButton.id = x.id;
-        subject.appendChild(dellButton);
 
-        const div = document.getElementById("listTuDu");
-        div.appendChild(subject);
-      });
-    }
+        document.getElementById("listTuDu").innerHTML = "";
 
-    // Controller--
-    function addTuDu(x) {
-      document.getElementById("listTuDu").innerHTML = "";
+        tudu.forEach(function (x) {
+          const subject = document.createElement("div");
+          subject.innerText = x.title + " || " + x.time + " || " + x.duedate;
 
-      const sub = document.getElementById("subjectTuDu");
-      const subject = sub.value;
+          const dellButton = document.createElement("button");
+          dellButton.innerHTML =
+            '<img style="position: center; width: 15px; height: 15px;" src="img/dellButton.png" alt="" />';
+          dellButton.className = "dellbutt";
+          dellButton.id = x.id;
+          dellButton.onclick = "dellTuDu(dellButton.id)";
 
-      const date = document.getElementById("dateTuDu");
-      const duedate = date.value;
+          subject.appendChild(dellButton);
 
-      const time = document.getElementById("timeTuDu");
-      const acttime = time.value;
+          const div = document.getElementById("listTuDu");
+          div.appendChild(subject);
+        });
+      }
 
-      createTuDu(subject, duedate, acttime);
+      // Controller--
+      function addTuDu(x) {
+        document.getElementById("listTuDu").innerHTML = "";
 
-      render();
-    }
+        const sub = document.getElementById("subjectTuDu");
+        const subject = sub.value;
 
-    function dellTuDu(event) {
-      const deleteBUTT = event.target;
-      const idtoDelete = deleteBUTT.id;
-      removeTuDu(idtoDelete);
-      render();
-    }
+        const date = document.getElementById("dateTuDu");
+        const duedate = date.value;
 
-    const a = "title";
-    console.log(tudu[a]);
-  </script>
-</body>
+        const time = document.getElementById("timeTuDu");
+        const acttime = time.value;
+
+        createTuDu(subject, duedate, acttime);
+
+        render();
+      }
+
+      function dellTuDu(event) {
+        const deleteBUTT = event.target;
+        const idtoDelete = deleteBUTT.id;
+        removeTuDu(idtoDelete);
+        render();
+      }
+    </script>
+  </body>
 </html>

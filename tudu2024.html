@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
 
     <link rel="stylesheet" href="style/headline24.css" />
+    <link rel="stylesheet" href="style/tudu24.css" />
 
     <title>Tu Du</title>
 
@@ -13,13 +14,16 @@
         outline-style: none;
         outline-width: 1px;
         background: #607d8b;
+        color: #bee2ee;
       }
-
-      * * {
+      
+      
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        border: 1px  blue;
+        border: 1px   blue;
+        color: #191f22;
       }
       body {
         display: flex;
@@ -31,44 +35,8 @@
         background: linear-gradient(
           rgb(190, 226, 238),
           rgb(120, 150, 160),
-          rgb(63, 63, 107)
+          rgb(88, 88, 139)
         );
-      }
-
-
-      .tudu-list {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: space-around;
-
-        height: fit-content;
-        width: 100%;
-      }
-
-
-      .note-section{
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #607d8b;
-      }
-      .tudu-note{
-        padding: 0px;
-        padding-left: 7px;
-        padding-right: 75px
-
-      }
-      .note-info{
-        padding-left: 50px;
-        padding-right: 50px;
-
-      }
-      .tudu-list-dellbutton{
-        padding-left: 50px;
-        padding-right: 50px;
       }
     </style>
   </head>
@@ -82,7 +50,7 @@
             <div class="tudu-icon">TUDU</div>
 
             <div class="tudu-search-section">
-              <div class="tudu-text-bar">
+              <div class="tudu-text-bar">              
                 <input class="tudu-string-input" id="subjectTuDu" type="text" />
               </div>
             </div>
@@ -99,29 +67,12 @@
 
             <div class="tudu-submit-button-section">
                 <button class="add-button" id="addTuDu" onclick="addTuDu()">
-                  <img class="img-add" src="img/dellButton.png" alt="" />
+                  <img class="img-add" src="img/add.png" alt="" />
                 </button>
               </div>
             </div>
 
-
-
-              <div class="note-section">
-
-                <div class="tudu-note"> text </div>
-                <div class="note-info"> info </div>        
-                <div class="tudu-list-dellbutton">
-                  <button class="add-button" id="addTuDu" onclick="addTuDu()">
-                    <img class="img-add" src="img/dellButton.png" alt="" />
-                  </button>
-                </div>
-
-              </div>
-              <div class="note-section">
-                <button class="add-button" id="addTuDu" onclick="addTuDu()">
-                  <img class="img-add" src="img/dellButton.png" alt="" />
-                </button>
-
+              <div class="list" id="listTuDu"></div>
               </div>
 
 
@@ -132,34 +83,9 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-                
-      let tudu;
+    <script src="tudu.js"></script>
 
-      const savedTuDus=JSON.parse(localStorage.getItem('tudu'));
-
-
-      if(Array.isArray(saveTuDus)) {
-        tudu = savedTuDus
-        render()
-      } else {
-        tudu = [
-        {
-          title: "Primeiro Tudu",
-          duedate: "28/02/2024",
-          time: acttime,
-          id: id,
-        },
-        ];
-        render()
-      }
-
-
-
-      function saveTuDu() {
-        localStorage.setItem('tudu', JSON.stringify(tudu));
-      }
-    </script>
+    <div class="tudu-crZ-btn"></div>
 
   </body>
 
