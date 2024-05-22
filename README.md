@@ -10,7 +10,7 @@ Which is this:
 
 ![image](https://github.com/Moernlk/TUDU/assets/119697976/7addd29e-7532-4ac4-a01a-f489b675dd5a)
 
-I also added the scrool structure so it does not DESAPEAR from the page when their are too many TODO sections. haha
+I also added the scrool structure so it does not DESAPEAR from the page when their are too many TUDU sections. haha
 
 ![image](https://github.com/Moernlk/TUDU/assets/119697976/36b04228-649b-49ab-89ae-896ec2221ec1)
 
